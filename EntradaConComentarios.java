@@ -28,4 +28,26 @@ public class EntradaConComentarios extends Entrada
 
         return comentarios;
     }
+    
+    
+    @Override
+    public String toString(){
+        //llamamos al toString de la clase padre con super(Entrada)
+        String cadenaADevolver = super.toString();
+        
+         if (getComentarios().isEmpty()) {
+            cadenaADevolver += "La entrada no tiene comentarios.\n" ;
+        }
+        else {
+            //Se recopilan los comentarios
+            cadenaADevolver += "Comentarios:\n";
+            for (String comentario : getComentarios()) {
+                cadenaADevolver += comentario ;
+            }
+        }   
+        return cadenaADevolver;
+    }
+    
+    
+ 
 }

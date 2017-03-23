@@ -16,7 +16,6 @@ public class EntradaTexto extends EntradaConComentarios
 
     }
 
-    
     public void addComentario(String texto)
     {
         getComentarios().add(texto);        
@@ -27,41 +26,35 @@ public class EntradaTexto extends EntradaConComentarios
         return mensaje;
     }
 
+    @Override
     public String toString()
     {
-        String cadenaADevolver = "";
+        //llamamos al toString de la clase padre(EntradaConComentarios)
+        String cadenaADevolver =  super.toString();
 
-        cadenaADevolver += "Usuario: " + getUsuario() ;
-        cadenaADevolver += " " + mensaje ;
-        cadenaADevolver += " " + getCantidadMeGusta() + " me gusta" + "\n";
-
-        long segundosQueHanPasadoDesdeCreacion =getMomentoPublicacion().until(LocalDateTime.now(), ChronoUnit.SECONDS);
-        long minutosQueHanPasadoDesdeCreacion = segundosQueHanPasadoDesdeCreacion / 60;
-        long segundosResiduales = segundosQueHanPasadoDesdeCreacion % 60;
-
-        cadenaADevolver += "Hace ";
-        if (minutosQueHanPasadoDesdeCreacion > 0) {
-            cadenaADevolver += minutosQueHanPasadoDesdeCreacion + " minutos " + "\n";
-        }
-        cadenaADevolver += segundosResiduales + " segundos." + "\n";       
-
-        if (getComentarios().isEmpty()) {
-            cadenaADevolver += "La entrada no tiene comentarios." + "\n";
-        }
-        else {
-            //Se recopilan los comentarios
-            cadenaADevolver += "Comentarios:\n";
-            for (String comentario : getComentarios()) {
-                cadenaADevolver += comentario ;
-            }
-        }   
+        cadenaADevolver +=  mensaje + "\n";
 
         return cadenaADevolver;
     }
-    
-     public void mostrar()
+
+    public void mostrar()
     {
         System.out.println(this);
+    }
+
+    public int getCantidadDeDatosAsociadosALaEntrada (){
+
+        return 5;
+    }
+
+    public void mostrarDatosExclusivos(){        
+        String textoAMostrar =  mensaje + "\n";        
+
+        System.out.println(textoAMostrar);
+    }
+
+    public void mostrarDatosExclusivosEntradasFiltradas(String entradasFiltradas, String autor ){
+        String textoFiltrado = entradasFiltradas;
     }
 
 }

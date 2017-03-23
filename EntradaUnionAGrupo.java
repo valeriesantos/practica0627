@@ -17,27 +17,17 @@ public class EntradaUnionAGrupo extends Entrada
     public EntradaUnionAGrupo(String autor,String grupo)
     {
         super(autor);  
-        this.grupo = grupo;
-        
+        this.grupo = grupo;        
     }
-     public String toString()
+    
+    @Override
+    public String toString()
     {
-        String cadenaADevolver = "";
+       //llamamos al toString de la clase padre(Entrada)
+       //para que se invoque el metodo toString de dicha clase
+        String cadenaADevolver = super.toString();
 
-        cadenaADevolver += "Usuario: " + getUsuario()+"\n";
-        cadenaADevolver += "Se ha unido a " + grupo+ "\n";
-        cadenaADevolver += getCantidadMeGusta() + " me gusta";
-
-        long segundosQueHanPasadoDesdeCreacion =getMomentoPublicacion().until(LocalDateTime.now(), ChronoUnit.SECONDS);
-        long minutosQueHanPasadoDesdeCreacion = segundosQueHanPasadoDesdeCreacion / 60;
-        long segundosResiduales = segundosQueHanPasadoDesdeCreacion % 60;
-
-        cadenaADevolver += "Hace ";
-        if (minutosQueHanPasadoDesdeCreacion > 0) {
-            cadenaADevolver += minutosQueHanPasadoDesdeCreacion + " minutos ";
-        }
-        cadenaADevolver += segundosResiduales + " segundos.\n";       
-
+        cadenaADevolver += "Se ha unido al grupo: " + grupo+ "\n";
        
 
         return cadenaADevolver;
@@ -47,6 +37,18 @@ public class EntradaUnionAGrupo extends Entrada
     {
         System.out.println(this);
     }
-
     
+    
+    public int getCantidadDeDatosAsociadosALaEntrada (){
+        return 4;
+        
+    }
+    
+    public void mostrarDatosExclusivos(){
+        
+        String textoAMostrar = "Se ha unido al grupo: " + grupo + "\n";
+        System.out.println(textoAMostrar);
+        
+
+    }
 }
