@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EntradaConComentarios extends Entrada
+public abstract class  EntradaConComentarios extends Entrada
 {
     private ArrayList<String> comentarios;
 

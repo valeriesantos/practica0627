@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Entrada
+public  abstract class   Entrada
 {
     private String usuario;
     private LocalDateTime momentoPublicacion;
@@ -73,32 +73,16 @@ public class Entrada
 
     }
 
-    public void mostrar(){
+    abstract public  void mostrar();
 
-    }
+    
     
     
     public int getCantidadDeDatosAsociadosALaEntrada (){
       return 0; 
     }
     
-    
-     public void archivoHtml(){
-           // Abrimos el archivo, escribimos en él y lo cerramos. Si se produce una
-        try  
-        {
-            Path rutaArchivoHtml = Paths.get("plantilla.html");
-            BufferedWriter archivo = Files.newBufferedWriter(rutaArchivoHtml);
-            archivo.write(toString());
-            
-            archivo.close();
-        }
-        catch (IOException excepcion) {
-            // Mostramos por pantalla la excepción que se ha producido
-            System.out.println(excepcion.toString());
-        }
-    }
-    
+ 
         
     }
 
