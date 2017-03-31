@@ -38,8 +38,8 @@ public class EntradaFoto extends EntradaConComentarios
         //llamamos al toString de la clase padre(EntradaConComentarios)
         String cadenaADevolver = super.toString();
 
-        cadenaADevolver += titulo + "\n";
-        cadenaADevolver += urlImagen + "\n";
+        cadenaADevolver  = "<p class='note'>" + cadenaADevolver + "<br/>" + titulo + "\n <br/>";
+        cadenaADevolver += "<p align='center' ><img src= '"  + urlImagen + "'"  + "/>"+ "</p> <br/> ";
 
         return cadenaADevolver;
     }

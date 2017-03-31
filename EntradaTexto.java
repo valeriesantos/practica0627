@@ -32,7 +32,7 @@ public class EntradaTexto extends EntradaConComentarios
         //llamamos al toString de la clase padre(EntradaConComentarios)
         String cadenaADevolver =  super.toString();
 
-        cadenaADevolver +=  mensaje + "\n";
+        cadenaADevolver = "<p class='note'>"+ cadenaADevolver+  "<br/>"+  mensaje + "\n <br/>";
 
         return cadenaADevolver;
     }

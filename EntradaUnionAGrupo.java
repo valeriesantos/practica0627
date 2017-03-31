@@ -27,7 +27,7 @@ public class EntradaUnionAGrupo extends Entrada
        //para que se invoque el metodo toString de dicha clase
         String cadenaADevolver = super.toString();
 
-        cadenaADevolver += "Se ha unido al grupo: " + grupo+ "\n";
+        cadenaADevolver = "<p class='note'> "+ cadenaADevolver+  "<br/> Se ha unido al grupo: " + grupo+ "\n";
        
 
         return cadenaADevolver;

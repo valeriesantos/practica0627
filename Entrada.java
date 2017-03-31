@@ -1,6 +1,13 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.lang.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.BufferedWriter;
+import java.nio.file.Files;
+import java.io.IOException;
 
 /**
  * Write a description of class Entrada here.
@@ -39,18 +46,18 @@ public class Entrada
         super.toString(); 
         String cadenaADevolver = "";
 
-        cadenaADevolver += "Usuario: " + getUsuario()+"\n";
-        cadenaADevolver += getCantidadMeGusta() + " me gusta\n";
+        cadenaADevolver += "<b> Usuario: </b>" + getUsuario() +"\n"+  "<br/>" ;
+        cadenaADevolver += getCantidadMeGusta() + " me gusta\n  <br/>"  ;
 
         long segundosQueHanPasadoDesdeCreacion =getMomentoPublicacion().until(LocalDateTime.now(), ChronoUnit.SECONDS);
         long minutosQueHanPasadoDesdeCreacion = segundosQueHanPasadoDesdeCreacion / 60;
         long segundosResiduales = segundosQueHanPasadoDesdeCreacion % 60;
 
-        cadenaADevolver += "Hace ";
+        cadenaADevolver += "\n"+ "Hace ";
         if (minutosQueHanPasadoDesdeCreacion > 0) {
-            cadenaADevolver += minutosQueHanPasadoDesdeCreacion + " minutos " + "\n";
+            cadenaADevolver += "\n"+ minutosQueHanPasadoDesdeCreacion + " minutos " + "\n <br/>";
         }
-        cadenaADevolver += segundosResiduales + " segundos." + "\n";       
+        cadenaADevolver += "\n" + segundosResiduales + " segundos." + "\n";       
 
 
         return cadenaADevolver;   
@@ -74,4 +81,24 @@ public class Entrada
     public int getCantidadDeDatosAsociadosALaEntrada (){
       return 0; 
     }
-}
+    
+    
+     public void archivoHtml(){
+           // Abrimos el archivo, escribimos en él y lo cerramos. Si se produce una
+        try  
+        {
+            Path rutaArchivoHtml = Paths.get("plantilla.html");
+            BufferedWriter archivo = Files.newBufferedWriter(rutaArchivoHtml);
+            archivo.write(toString());
+            
+            archivo.close();
+        }
+        catch (IOException excepcion) {
+            // Mostramos por pantalla la excepción que se ha producido
+            System.out.println(excepcion.toString());
+        }
+    }
+    
+        
+    }
+

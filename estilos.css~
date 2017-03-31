@@ -1,0 +1,88 @@
+body{ /* Redefinimos la etiqueta body */
+            padding: 0px;
+            margin: 0px;
+            font-family: arial, helvetica;
+            width: 1100px;
+            margin-left: 2cm;
+            font-size: 17px;
+            background-color: #C8D4E9;
+            margin-right: 0cm;
+            
+
+        }
+        
+     
+         h1{ 
+            color: blue;
+            margin-left: 0cm;
+            margin-bottom: 0cm;
+            font-size:60px;
+            font-family: verdana;
+                        background-image: url(descarga.jpg);
+                        background-size: 45px;
+                        margin-top: 0px;
+        }
+       	h2{
+        	color: blue;
+			text-align: center;
+        	font-size: 45px;
+        	font-family: arial, helvetica;
+       
+
+
+        
+        }
+        
+        img{
+        width: 750px;
+        height: 750px;
+        }
+         #header{
+            border-bottom: 3px solid gold; 
+                      
+         }
+        
+
+         
+        }
+          #sidebar { /* Estilo contenedor enlaces */
+            float: left;
+            width: 15%;
+        }
+         #article{ /* Estilo article */
+            float: left;
+            width: 80%;
+        }
+        #footer{ /* Estilo para el pie de pÃƒÂ¡gina */
+            clear: both; 
+            text-align: center;
+            border-top: 1px solid silver; 
+            font-size: small;
+            color: gray;
+            background-color: #E3DAFF;
+            padding: 20px;
+        }
+        #sidebar a { /* Estilo para los enlaces de la barra lateral (sidebar) */
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 5px; 
+            display: block; 
+        }
+        #sidebar a:hover{ /* Pseudo-clase hover para los enlaces de la clase sidebar */
+            background-color: navy;
+            color: white; 
+        }
+        #article p { /* PÃƒÂ¡rrafos dentro del artÃƒÂ­culo */
+            line-height: 20pt;
+        }
+         .note{ /* Definimos la clase nota */
+            background-color: #BABABA;
+            margin-left: 7cm;
+            margin-right: 7cm;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        .alineado-derecha { /* Definimos la clase alineado-derecha */
+            text-align: right;
+        }

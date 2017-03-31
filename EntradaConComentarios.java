@@ -36,7 +36,7 @@ public class EntradaConComentarios extends Entrada
         String cadenaADevolver = super.toString();
         
          if (getComentarios().isEmpty()) {
-            cadenaADevolver += "La entrada no tiene comentarios.\n" ;
+            cadenaADevolver += "\n <br/>" + "La entrada no tiene comentarios.\n" ;
         }
         else {
             //Se recopilan los comentarios
